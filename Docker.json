@@ -1,0 +1,13 @@
+{
+ "schedule": "R\/2015-05-12T06:29:00Z\/PT2M",
+
+ "name": "dockerjobs3",
+ "container": {
+   "type": "DOCKER",
+   "image": "libmesos/ubuntu"
+ },
+ "cpus": "0.5",
+ "mem": "512",
+ "uris": [],
+ "command": "date -u +%T"
+}
