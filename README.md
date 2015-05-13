@@ -45,7 +45,7 @@ Chronos      :   http://192.168.33.10:8081
 
 **NOTE:Use leader node for Marathon and Chronos**
 
-Chronos and Marathon is work only on learder node of Mesos. You may need to stop Chronos and Marathon which is working on non leader nodes.
+Chronos and Marathon work only on learder node of Mesos. You may need to stop Chronos and Marathon which is working on non leader nodes.
 
 To get to know the leader node, Open Apache Mesos pages (e.g. http://192.168.33.10:5050) then it will automatically redirect to the leader node.
 
