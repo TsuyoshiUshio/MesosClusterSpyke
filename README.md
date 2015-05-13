@@ -49,7 +49,7 @@ Chronos and Marathon is work only on learder node of Mesos. You may need to stop
 
 To get to know the leader node, Open Apache Mesos pages (e.g. http://192.168.33.10:5050) then it will automatically redirect to the leader node.
 
-### 3. How to stop the non leader node
+### 3. How to stop the non leader nodes
 
 *Stop Chronos*
 
