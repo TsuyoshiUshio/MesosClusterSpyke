@@ -89,7 +89,7 @@ Create Docker.json file like this.
 						]
 					}
 	},
-	"id": "bservice",
+	"id": "aservice",
 	"instances": 1,
 	"cpus": 0.5,
 	"mem": 512,
@@ -97,7 +97,7 @@ Create Docker.json file like this.
 }
 ```
 
-Then execute this command
+Then execute this command. You need to change the ipaddress(192.168.33.10) into others(192.168.33.11, 192.168.33.12) if it is not master node.
 
 ```
 $ curl -X POST -H "Content-Type: application/json" http://192.168.33.10:8080/v2/apps -d@Docker.json
