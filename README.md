@@ -18,6 +18,8 @@ vagrant 1.7.2
 git 2.2.1
 ```
 
+I try it using Windows 8.1 and vagrant 1.7.2. it works!
+
 Just clone it then vagrant up and reload. It will take about 40 minutes.
 
 ```
@@ -71,5 +73,36 @@ vagrant@vagrant-ubuntu-trusty-64:~$ sudo initctl stop marathon
 ![Screen Shot 2015-05-12 at 21.58.01.png](https://qiita-image-store.s3.amazonaws.com/0/3470/cd373de1-e890-2038-0b21-34aca7b356d8.png)
 ![Screen Shot 2015-05-12 at 22.57.43.png](https://qiita-image-store.s3.amazonaws.com/0/3470/854306ff-786f-80c2-457e-07d866076cd8.png)
 
+### 4. Deploy your Docker container using Marathon
+
+Create Docker.json file like this.
+
+```
+{
+	"container": {
+			"type": "DOCKER",
+					"docker": {
+						"image": "tsuyoshiushio/aservice",
+						"network": "BRIDGE",
+						"portMappings": [
+							{ "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp"}
+						]
+					}
+	},
+	"id": "bservice",
+	"instances": 1,
+	"cpus": 0.5,
+	"mem": 512,
+	"uris": []
+}
+```
+
+Then execute this command
+
+```
+$ curl -X POST -H "Content-Type: application/json" http://192.168.33.10:8080/v2/apps -d@Docker.json
+```
+
+Marathon automatically allocate a port for this application. HostPort/ServierPort = 0 meanins allocate it automatically. You can find the port on Marathon at app>aservice Page. 
 
 Happy clustering!
