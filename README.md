@@ -103,6 +103,6 @@ Then execute this command. You need to change the ipaddress(192.168.33.10) into 
 $ curl -X POST -H "Content-Type: application/json" http://192.168.33.10:8080/v2/apps -d@Docker.json
 ```
 
-Marathon automatically allocate a port for this application. HostPort/ServierPort = 0 meanins allocate it automatically. You can find the port on Marathon at app>aservice Page. 
+Marathon automatically allocate a port for this application. HostPort/ServierPort = 0 meanins allocate it automatically. You can find the port on Marathon at app>aservice Page. Click the link then you can see a demo webpage of a docker container!
 
 Happy clustering!
